@@ -2,12 +2,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         'create-windows-installer': {
             ia32: {
-                appDirectory: './out/myApp',
+                appDirectory: './out/electronQuickStart-win32-ia32',
                 outputDirectory: './out/dist',
-                name: 'MyApp',
-                description: 'MyApp With AutoUpdate 30thMay',
+                name: 'electronQuickStart',
+                description: 'electronQuickStart',
+                setupExe: 'electronQuickStartSetup.exe',
                 authors: 'Xenovus',
-                exe: 'MyApp.exe'
+                exe: 'electronQuickStart.exe'
             }
         }
     });

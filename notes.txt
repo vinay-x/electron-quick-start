@@ -1,0 +1,4 @@
+For using Gruntfile.js to create installer.
+
+npm install -g grunt-cli
+npm install grunt grunt-electron-installer --save-dev
