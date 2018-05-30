@@ -1,7 +1,7 @@
 {
   "name": "electronQuickStart",
   "productName": "electronQuickStart",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -25,5 +25,11 @@
     "electron-winstaller": "^2.2.0",
     "grunt": "^1.0.2",
     "grunt-electron-installer": "^2.1.0"
+  },
+  "dependencies": {
+    "electron-settings": "^3.0.7",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^7.1.0",
+    "highlight.js": "^9.3.0"
   }
 }
