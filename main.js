@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const {app, BrowserWindow} = require('electron')
 const autoUpdater = require('./auto-updater')
-
+const macAutoUpdater = require("electron-updater").autoUpdater
 const debug = /--debug/.test(process.argv[2])
 
 if (process.mas) app.setName('Electron APIs')
@@ -43,6 +43,8 @@ function initialize () {
     app.on('ready', () => {
         createWindow()
         autoUpdater.initialize()
+        macAutoUpdater.checkForUpdatesAndNotify()
+
 })
 
     app.on('window-all-closed', () => {

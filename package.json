@@ -1,13 +1,15 @@
 {
   "name": "electronQuickStart",
   "productName": "electronQuickStart",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico",
-    "package:osx": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns"
+    "package:osx": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "repository": "https://github.com/vinay-x/electron-quick-start",
   "keywords": [
@@ -18,9 +20,37 @@
     "demo"
   ],
   "author": "Xenovus",
-  "license": "CC0-1.0",
+  "build": {
+    "appId": "Xeno123",
+    "mac": {
+      "target": [
+        "pkg",
+        "zip"
+      ],
+      "artifactName": "MyAppSetup.${ext}"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "https://localhost:8000/"
+    }
+  },
   "devDependencies": {
     "electron": "^2.0.0",
+    "electron-builder": "^20.15.1",
     "electron-packager": "^8.6.0",
     "electron-winstaller": "^2.2.0",
     "grunt": "^1.0.2",
@@ -30,6 +60,8 @@
     "electron-settings": "^3.0.7",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^7.1.0",
-    "highlight.js": "^9.3.0"
+    "highlight.js": "^9.3.0",
+    "update": "^0.7.4",
+    "electron-updater": "2.21.10"
   }
 }
