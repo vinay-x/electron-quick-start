@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron .",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico",
-    "package:installer": "node ./script/installer.js"
+    "package:osx": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns"
   },
   "repository": "https://github.com/vinay-x/electron-quick-start",
   "keywords": [
